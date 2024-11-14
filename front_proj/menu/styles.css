@@ -19,8 +19,7 @@
   
   .search-bar {
     display: flex;
-    flex-direction: c;
-    /* justify-content: center; */
+    justify-content: center;
     margin-top: 10px;
   }
   
@@ -109,11 +108,10 @@
   }
   
   .suggestions-list {
-    top:20px;
+    margin-top:50px;
     color:black !important;
     position: absolute;
     background-color: white;
-    border: 1px solid #ddd;
     border-radius: 4px;
     width: 70%;
     max-height: 150px;
