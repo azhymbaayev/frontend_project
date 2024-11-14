@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+  }
+  
+  header {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #510970;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #e0e0e0;
+  }
+  
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .search-bar input {
+    width: 70%;
+    max-width: 500px;
+    padding: 12px 15px;
+    border: 2px solid #dcdc1d;
+    border-radius: 6px 0 0 6px;
+    outline: none;
+    font-size: 1em;
+    transition: border-color 0.3s;
+  }
+  
+  .search-bar input:focus {
+    border-color: #0056b3;
+  }
+  
+  .search-bar button {
+    padding: 12px 20px;
+    background-color: #a4ca0e;
+    color: #ffffff;
+    border: 2px solid hsl(70, 88%, 27%);
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .search-bar button:hover {
+    background-color: #0bb261;
+    border-color: #0056b3;
+  }
+  
+  .suggestions-list {
+    margin-top: 50px;
+    color:black !important;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 70%;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    
+  }
+  
+  .suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.95em;
+    color: #333;
+  }
+  
+  .suggestion-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    padding: 20px;
+    background-color: #f4f6f9;
+  }
+  
+  .movie-card {
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+  
+  .movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .movie-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .movie-card h3 {
+    font-size: 18px;
+    color: #333333;
+    margin: 10px 0 5px;
+    font-weight: 600;
+  }
+  
+  .movie-card p {
+    font-size: 14px;
+    color: #666666;
+    margin: 5px 0;
+  }
+  
+  button.watchlist-button {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button.watchlist-button.added {
+    background-color: #ff6347; 
+  }
+  
+  button.watchlist-button:hover {
+    background-color: #218838; 
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  #movieDetails {
+    width: 100%;
+    max-height: 70vh;
+    overflow-y: auto;
+    text-align: left;
+  }
+  
+  .search-bar select {
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .search-bar select:focus {
+    border-color: #0056b3;
+  }
+  

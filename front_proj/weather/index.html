@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Weather App</title>
+</head>
+<body>
+  <header>
+    <h1>Weather Finder</h1>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Enter city name..." oninput="autocompleteLocalSearch()">
+        <div id="suggestions" class="suggestions-list"></div>
+        <button onclick="searchWeather()">Search</button>
+        <button onclick="getLocation()">Use My Location</button> 
+        <!-- <button onclick="toggleUnit()">Toggle °C/°F</button> -->
+      </div>
+      
+  </header>
+
+  <main>
+    <section id="currentWeather" class="weather-section">
+      <h2>Current Weather</h2>
+      <div id="currentWeatherDisplay"></div>
+    </section>
+
+    <section id="forecastWeather" class="weather-section">
+      <div id="forecastDisplay"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

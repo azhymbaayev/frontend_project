@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Movies App</title>
+    </head>
+    <body>
+        <header>
+            <h1>Movies Finder</h1>
+            <p>Find movies based on titles!</p>
+            <div class="search-bar">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Enter movie title..."
+                    oninput="autocompleteSearch()"
+                />
+                <div id="suggestions" class="suggestions-list"></div>
+                <button onclick="searchMovies()">Search</button>
+                <!-- Sorting Dropdown -->
+                <select id="sortOption" onchange="searchMovies()">
+                    <option value="popularity.desc">Popularity</option>
+                    <option value="release_date.desc">Release Date</option>
+                    <option value="vote_average.desc">Rating</option>
+                </select>
+            </div>
+        </header>
+        <main>
+            <div id="moviesContainer" class="movie-grid"></div>
+            <div id="watchlistContainer" class="movie-grid"></div>
+        </main>
+
+        <!-- Movie Modal -->
+        <div id="movieModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <div id="movieDetails"></div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
